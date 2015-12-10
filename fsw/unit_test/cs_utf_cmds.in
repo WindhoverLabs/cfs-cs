@@ -40,8 +40,8 @@
 *<cs_utf_cmds.in> Send Report Baseline command before baselines have  been computed
 *-----------------------------------------------------------------------
 *
-189F C000 0001 0800 ; Report Baseline cFE core
-189F C000 0001 0C00 ; Report Baseline OS
+9F18 00C0 0100 0800 ; Report Baseline cFE core
+9F18 00C0 0100 0C00 ; Report Baseline OS
 
 *
 *-----------------------------------------------------------------------
@@ -50,47 +50,47 @@
 *
 *<cs_utf_cmds.in> HK Request 
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 *<cs_utf_cmds.in> Bad HK Request 
 *
-18A0 C000 0003 0000 0000; Bad HK request
+A018 00C0 0300 0000 0000; Bad HK request
 *
 *<cs_utf_cmds.in> Bad Background Check Request 
 *
-18A1 C000 0003 0000 0000; Bad Background request to go through channels
+A118 00C0 0300 0000 0000; Bad Background request to go through channels
 *
 *<cs_utf_cmds.in> NOOP Command 
 *
-189F C000 0001 0000 ; NOOP command
+9F18 00C0 0100 0000 ; NOOP command
 *
 *<cs_utf_cmds.in> Bad NOOP Command 
 *
-189F C000 0007 0000 1234 FFFF 7FFF  ; Bad NOOP Command
+9F18 00C0 0700 0000 1234 FFFF 7FFF  ; Bad NOOP Command
 *
 *<cs_utf_cmds.in> Reset Command
 *
-189F C000 0001 0100 ; Reset Command
+9F18 00C0 0100 0100 ; Reset Command
 *
 *<cs_utf_cmds.in> Disable All CS Command
 *
-189F C000 0001 0500 ; Disable All CS Command
+9F18 00C0 0100 0500 ; Disable All CS Command
 *
 *<cs_utf_cmds.in> Enable All CS Command
 *
-189F C000 0001 0400 ; Enable All CS Command
+9F18 00C0 0100 0400 ; Enable All CS Command
 *
 *<cs_utf_cmds.in> Cancel OneShot Command
 *
-189F C000 0001 0300 ; Cancel OneShot Command
+9F18 00C0 0100 0300 ; Cancel OneShot Command
 *
 *<cs_utf_cmds.in> OneShot Command
 *
-189F C000 0009 0200 FB14 0001 0001 0000 ;OneShot command
+9F18 00C0 0900 0200 FB14 0001 0001 0000 ;OneShot command
 *
 *<cs_utf_cmds.in> Cancel OneShot Command
 *
-189F C000 0001 0300 ; Cancel OneShot Command
+9F18 00C0 0100 0300 ; Cancel OneShot Command
 *
 *
 *-----------------------------------------------------------------------
@@ -99,7 +99,7 @@
 *
 @CS_BACKGROUND_CHECK
 
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @CS_PRINT_TABLE_DATA
 *
 *
@@ -116,7 +116,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 @ CS_PRINT_TABLE_DATA
 *
@@ -132,23 +132,23 @@
 *<cs_utf_cmds.in> Send Report Baseline command before baselines have  been computed
 *-----------------------------------------------------------------------
 *
-189F C000 0003 1000 0000 ; Report Baseline Eeprom entry 0
-189F C000 0003 1700 0000 ; Report Baseline Memory entry 0
-189F C000 0027 1E00 5343 442E 6665 654D 6F6D 7972 6254 006C 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline Tables "CS.DefMemoryTbl"
-189F C000 0027 1E00 5343 442E 6665 4F4E 5454 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline Tables "CS.DefNOTTbl", expecting error
-189F C000 0015 2400 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline App "CS"
-189F C000 0015 2400 5143 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline App "CQ", expecting error
+9F18 00C0 0300 1000 0000 ; Report Baseline Eeprom entry 0
+9F18 00C0 0300 1700 0000 ; Report Baseline Memory entry 0
+9F18 00C0 2700 1E00 5343 442E 6665 654D 6F6D 7972 6254 006C 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline Tables "CS.DefMemoryTbl"
+9F18 00C0 2700 1E00 5343 442E 6665 4F4E 5454 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline Tables "CS.DefNOTTbl", expecting error
+9F18 00C0 1500 2400 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline App "CS"
+9F18 00C0 1500 2400 5143 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline App "CQ", expecting error
 *
 *
 *-----------------------------------------------------------------------
 *<cs_utf_cmds.in> Now that we have updated the tables sucessfully, Re-Enable them
 *-----------------------------------------------------------------------
 *
-189F C000 0001 0E00 ; Enable Eeprom
-189F C000 0001 1500 ; Enable Memory
-189F C000 0001 2200 ; Enable Apps
-189F C000 0001 1C00 ; Enable Tables
-18A0 C000 0001 0000 ; HK request
+9F18 00C0 0100 0E00 ; Enable Eeprom
+9F18 00C0 0100 1500 ; Enable Memory
+9F18 00C0 0100 2200 ; Enable Apps
+9F18 00C0 0100 1C00 ; Enable Tables
+A018 00C0 0100 0000 ; HK request
 *
 *
 *-----------------------------------------------------------------------
@@ -162,7 +162,7 @@
 *<cs_utf_cmds.in> Send HK request to show data and print out the tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @CS_PRINT_TABLE_DATA
 *
 *
@@ -178,7 +178,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @ CS_PRINT_TABLE_DATA
 *
 *
@@ -193,7 +193,7 @@
 *<cs_utf_cmds.in> Send HK request to show data and print out the tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @CS_PRINT_TABLE_DATA
 *
 *
@@ -209,7 +209,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @ CS_PRINT_TABLE_DATA
 *
 *
@@ -224,7 +224,7 @@
 *<cs_utf_cmds.in> Send HK request to show data and print out the tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @CS_PRINT_TABLE_DATA
 *
 *
@@ -242,7 +242,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 @ CS_PRINT_TABLE_DATA
 *
@@ -265,7 +265,7 @@
 *<cs_utf_cmds.in> Send HK request to show data and print out the tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @CS_PRINT_TABLE_DATA
 *
 *
@@ -281,7 +281,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @ CS_PRINT_TABLE_DATA
 @CS_RECOMPUTE_INVALID_NAMES
 *
@@ -297,7 +297,7 @@
 *<cs_utf_cmds.in> Send HK request to show data and print out the tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @CS_PRINT_TABLE_DATA
 *
 *
@@ -315,7 +315,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 @ CS_PRINT_TABLE_DATA
 *
@@ -339,7 +339,7 @@
 *<cs_utf_cmds.in> Send HK request to show data and print out the tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 @CS_PRINT_TABLE_DATA
 *
 *
@@ -357,7 +357,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 @ CS_PRINT_TABLE_DATA
 *
@@ -381,49 +381,49 @@
 *<cs_utf_cmds.in> Send Report baseline commands now that the baselines have been computed
 *-----------------------------------------------------------------------
 *
-189F C000 0001 0800 ; Report Baseline cFE core
-189F C000 0001 0C00 ; Report Baseline OS
-189F C000 0003 1000 0000 ; Report Baseline Eeprom entry 0
-189F C000 0003 1700 0000 ; Report Baseline Memory entry 0
-189F C000 0003 1000 0064 ; Report Baseline Eeprom entry 100, for error
-189F C000 0003 1700 0064 ; Report Baseline Memory entry 100, for error
-189F C000 0003 1000 000A ; Report Baseline Eeprom entry 10, for error
-189F C000 0003 1700 000A ; Report Baseline Memory entry 10, for error
-189F C000 0003 1100 000A ; Recompute Eeprom Entry 10 for failure
-189F C000 0003 1800 000A ; Recompute Memory Entry 10 for failure
+9F18 00C0 0100 0800 ; Report Baseline cFE core
+9F18 00C0 0100 0C00 ; Report Baseline OS
+9F18 00C0 0300 1000 0000 ; Report Baseline Eeprom entry 0
+9F18 00C0 0300 1700 0000 ; Report Baseline Memory entry 0
+9F18 00C0 0300 1000 0064 ; Report Baseline Eeprom entry 100, for error
+9F18 00C0 0300 1700 0064 ; Report Baseline Memory entry 100, for error
+9F18 00C0 0300 1000 000A ; Report Baseline Eeprom entry 10, for error
+9F18 00C0 0300 1700 000A ; Report Baseline Memory entry 10, for error
+9F18 00C0 0300 1100 000A ; Recompute Eeprom Entry 10 for failure
+9F18 00C0 0300 1800 000A ; Recompute Memory Entry 10 for failure
 
-189F C000 0027 1E00 5343 442E 6665 654D 6F6D 7972 6254 006C 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline Tables "CS.DefMemoryTbl""
-189F C000 0015 2400 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline App "CS"
+9F18 00C0 2700 1E00 5343 442E 6665 654D 6F6D 7972 6254 006C 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline Tables "CS.DefMemoryTbl""
+9F18 00C0 1500 2400 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Report Baseline App "CS"
 *
 *
 *-----------------------------------------------------------------------
 *<cs_utf_cmds.in> Send Command for the cFE core and OS commands
 *-----------------------------------------------------------------------
 *
-189F C000 0001 0700 ; Disable cFE Core Command
-189F C000 0001 0600 ; Enable  cFE Core Command
-189F C000 0001 0B00 ; Disable OS Command
-189F C000 0001 0A00 ; Enable  OS Command
+9F18 00C0 0100 0700 ; Disable cFE Core Command
+9F18 00C0 0100 0600 ; Enable  cFE Core Command
+9F18 00C0 0100 0B00 ; Disable OS Command
+9F18 00C0 0100 0A00 ; Enable  OS Command
 *
 *
 *-----------------------------------------------------------------------
 *<cs_utf_cmds.in> Send commands for Eeprom
 *-----------------------------------------------------------------------
 *
-189F C000 0001 0F00 ; Disable Eeprom
-189F C000 0001 0E00 ; Enable Eeprom
-189F C000 0003 1300 0000 ; Disable Eeprom entry 0
-189F C000 0003 1200 0000 ; Enable Eeprom entry 0
+9F18 00C0 0100 0F00 ; Disable Eeprom
+9F18 00C0 0100 0E00 ; Enable Eeprom
+9F18 00C0 0300 1300 0000 ; Disable Eeprom entry 0
+9F18 00C0 0300 1200 0000 ; Enable Eeprom entry 0
 @CS_REMOVE_DEF_TABLE_ENTRY EEPROM
-189F C000 0003 1300 0000 ; Disable Eeprom entry 0, expect warning
-189F C000 0003 1200 0000 ; Enable Eeprom entry 0, expect warning
-189F C000 0003 1300 0064 ; Disable Eeprom entry 100, for error
-189F C000 0003 1200 0064 ; Enable Eeprom entry 100, for error
-189F C000 0003 1300 000A ; Disable Eeprom entry 10, for error
-189F C000 0003 1200 000A ; Enable Eeprom entry 10, for error
+9F18 00C0 0300 1300 0000 ; Disable Eeprom entry 0, expect warning
+9F18 00C0 0300 1200 0000 ; Enable Eeprom entry 0, expect warning
+9F18 00C0 0300 1300 0064 ; Disable Eeprom entry 100, for error
+9F18 00C0 0300 1200 0064 ; Enable Eeprom entry 100, for error
+9F18 00C0 0300 1300 000A ; Disable Eeprom entry 10, for error
+9F18 00C0 0300 1200 000A ; Enable Eeprom entry 10, for error
 @CS_SET_EEPROM_MEMORY_TBL_ENTRY_11
-189F C000 0005 1400 4020 0003; GetEntry ID for address  0x00034020
-189F C000 0005 1400 0000 0000; Get Entry ID for address 0x00000000, expecting notfound
+9F18 00C0 0500 1400 4020 0003; GetEntry ID for address  0x00034020
+9F18 00C0 0500 1400 0000 0000; Get Entry ID for address 0x00000000, expecting notfound
 @CS_RESET_EEPROM_MEMORY_TBL_ENTRY_11
 *
 *
@@ -431,20 +431,20 @@
 *<cs_utf_cmds.in> Send commands for Memory
 *-----------------------------------------------------------------------
 *
-189F C000 0001 1600 ; Disable Memory
-189F C000 0001 1500 ; Enable Memory
-189F C000 0003 1A00 0000 ; Disable Memory entry 0
-189F C000 0003 1900 0000 ; Enable Memory entry 0
+9F18 00C0 0100 1600 ; Disable Memory
+9F18 00C0 0100 1500 ; Enable Memory
+9F18 00C0 0300 1A00 0000 ; Disable Memory entry 0
+9F18 00C0 0300 1900 0000 ; Enable Memory entry 0
 @CS_REMOVE_DEF_TABLE_ENTRY MEMORY
-189F C000 0003 1A00 0000 ; Disable Memory entry 0, expect warning
-189F C000 0003 1900 0000 ; Enable Memory entry 0, expect warning
-189F C000 0003 1A00 0064 ; Disable Memory entry 100, for error
-189F C000 0003 1900 0064 ; Enable Memory entry 100, for error
-189F C000 0003 1A00 000A ; Disable Memory entry 10, for error
-189F C000 0003 1900 000A ; Enable Memory entry 10, for error
+9F18 00C0 0300 1A00 0000 ; Disable Memory entry 0, expect warning
+9F18 00C0 0300 1900 0000 ; Enable Memory entry 0, expect warning
+9F18 00C0 0300 1A00 0064 ; Disable Memory entry 100, for error
+9F18 00C0 0300 1900 0064 ; Enable Memory entry 100, for error
+9F18 00C0 0300 1A00 000A ; Disable Memory entry 10, for error
+9F18 00C0 0300 1900 000A ; Enable Memory entry 10, for error
 @CS_SET_EEPROM_MEMORY_TBL_ENTRY_11
-189F C000 0005 1B00 4020 0003 ; GetEntry ID for address  0x000034020
-189F C000 0005 1B00 0000 0000; Get Entry ID for address 0x00000000, expecting not found
+9F18 00C0 0500 1B00 4020 0003 ; GetEntry ID for address  0x000034020
+9F18 00C0 0500 1B00 0000 0000; Get Entry ID for address 0x00000000, expecting not found
 @CS_RESET_EEPROM_MEMORY_TBL_ENTRY_11
 *
 *
@@ -452,34 +452,34 @@
 *<cs_utf_cmds.in> Send Commands for Apps
 *-----------------------------------------------------------------------
 *
-189F C000 0001 2300 ; Disable Apps
-189F C000 0001 2200 ; Enable Apps
-189F C000 0015 2700 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable CS
-189F C000 0015 2700 5143 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable CQ, expecting error
-189F C000 0015 2600 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable CS
-189F C000 0015 2600 5143 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable CQ, expecting error
-189F C000 0015 2700 4141 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable AA
-189F C000 0015 2600 4141 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable AA
+9F18 00C0 0100 2300 ; Disable Apps
+9F18 00C0 0100 2200 ; Enable Apps
+9F18 00C0 1500 2700 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable CS
+9F18 00C0 1500 2700 5143 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable CQ, expecting error
+9F18 00C0 1500 2600 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable CS
+9F18 00C0 1500 2600 5143 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable CQ, expecting error
+9F18 00C0 1500 2700 4141 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable AA
+9F18 00C0 1500 2600 4141 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable AA
 @CS_REMOVE_DEF_TABLE_ENTRY APP
-189F C000 0015 2700 4242 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable BB, expecting warning
-189F C000 0015 2600 4242 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable BB, expecting warning
+9F18 00C0 1500 2700 4242 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable BB, expecting warning
+9F18 00C0 1500 2600 4242 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable BB, expecting warning
 *
 *
 *-----------------------------------------------------------------------
 *<cs_utf_cmds.in> Send Commands for Tables
 *-----------------------------------------------------------------------
 *
-189F C000 0001 1D00 ; Disable Tables
-189F C000 0001 1C00 ; Enable Tables
-189F C000 0027 2100 5343 442E 6665 654D 6F6D 7972 6254 006C 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable table "CS.DefMemoryTbl"
-189F C000 0027 2100 5343 442E 6665 4F4E 5454 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable table "CS.DefNOTTbl", expecting Error
-189F C000 0027 2000 5343 442E 6665 654D 6F6D 7972 6254 006C 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable table "CS.DefMemoryTbl"
-189F C000 0027 2000 5343 442E 6665 4F4E 5454 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable table "CS.DefNOTTbl", expecting Error
-189F C000 0027 2100 4141 542E 6261 656C 0031 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable table "AA.Table1"
-189F C000 0027 2000 4141 542E 6261 656C 0031 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable table "AA.Table1"
+9F18 00C0 0100 1D00 ; Disable Tables
+9F18 00C0 0100 1C00 ; Enable Tables
+9F18 00C0 2700 2100 5343 442E 6665 654D 6F6D 7972 6254 006C 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable table "CS.DefMemoryTbl"
+9F18 00C0 2700 2100 5343 442E 6665 4F4E 5454 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable table "CS.DefNOTTbl", expecting Error
+9F18 00C0 2700 2000 5343 442E 6665 654D 6F6D 7972 6254 006C 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable table "CS.DefMemoryTbl"
+9F18 00C0 2700 2000 5343 442E 6665 4F4E 5454 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable table "CS.DefNOTTbl", expecting Error
+9F18 00C0 2700 2100 4141 542E 6261 656C 0031 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable table "AA.Table1"
+9F18 00C0 2700 2000 4141 542E 6261 656C 0031 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable table "AA.Table1"
 @CS_REMOVE_DEF_TABLE_ENTRY TABLES
-189F C000 0027 2100 4141 542E 6261 656C 0031 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable table "AA.Table1", expecting warning
-189F C000 0027 2000 4141 542E 6261 656C 0031 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable table "AA.Table1", expecting warning
+9F18 00C0 2700 2100 4141 542E 6261 656C 0031 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Disable table "AA.Table1", expecting warning
+9F18 00C0 2700 2000 4141 542E 6261 656C 0031 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Enable table "AA.Table1", expecting warning
 *
 *
 *-----------------------------------------------------------------------
@@ -491,45 +491,45 @@
 *<cs_utf_cmds.in> cancel the one shot so it is 'free' again
 *-----------------------------------------------------------------------
 *
-189F C000 0009 0200 FB14 0001 0001 0000 ; OneShot command
-189F C000 0001 0900 ; Recompute Baseline for cFE Core
-189F C000 0001 0D00 ; Recompute Baseline for OS 
-189F C000 0003 1100 0000 ; Recompute Eeprom Entry 0
-189F C000 0003 1100 0064 ; Recompute Eeprom Entry 100 for failure
-189F C000 0003 1800 0000 ; Recompute Memory Entry 0
-189F C000 0003 1800 0064 ; Recompute Memory Entry 100 for failure
-189F C000 0027 1F00 5343 442E 6665 7041 5470 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute Table for "CS.DefAppTbl"
-189F C000 0027 1F00 5343 4E2E 544F 4548 4552 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000; Recompute Table for "CS.NOTHERE"
-189F C000 0015 2500 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute App for "CS"
-189F C000 0015 2500 5343 4E5F 544F 4548 4552 0000 0000 0000 0000 0000 ; Recompute for "CS_NOTHERE"
-189F C000 0001 0300 ; Cancel OneShot Command
+9F18 00C0 0900 0200 FB14 0001 0001 0000 ; OneShot command
+9F18 00C0 0100 0900 ; Recompute Baseline for cFE Core
+9F18 00C0 0100 0D00 ; Recompute Baseline for OS 
+9F18 00C0 0300 1100 0000 ; Recompute Eeprom Entry 0
+9F18 00C0 0300 1100 0064 ; Recompute Eeprom Entry 100 for failure
+9F18 00C0 0300 1800 0000 ; Recompute Memory Entry 0
+9F18 00C0 0300 1800 0064 ; Recompute Memory Entry 100 for failure
+9F18 00C0 2700 1F00 5343 442E 6665 7041 5470 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute Table for "CS.DefAppTbl"
+9F18 00C0 2700 1F00 5343 4E2E 544F 4548 4552 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000; Recompute Table for "CS.NOTHERE"
+9F18 00C0 1500 2500 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute App for "CS"
+9F18 00C0 1500 2500 5343 4E5F 544F 4548 4552 0000 0000 0000 0000 0000 ; Recompute for "CS_NOTHERE"
+9F18 00C0 0100 0300 ; Cancel OneShot Command
 *
 *
 *-----------------------------------------------------------------------
 *<cs_utf_cmds.in> Now send all the commands so it 'works' properly
 *-----------------------------------------------------------------------
 *
-189F C000 0009 0200 FB14 0001 0001 0000 ; OneShot command
+9F18 00C0 0900 0200 FB14 0001 0001 0000 ; OneShot command
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0001 0900 ; Recompute Baseline for cFE Core
+9F18 00C0 0100 0900 ; Recompute Baseline for cFE Core
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0001 0D00 ; Recompute Baseline for OS 
+9F18 00C0 0100 0D00 ; Recompute Baseline for OS 
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0003 1100 0000 ; Recompute Eeprom Entry 0
+9F18 00C0 0300 1100 0000 ; Recompute Eeprom Entry 0
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0003 1100 0064 ; Recompute Eeprom Entry 100 for failure
+9F18 00C0 0300 1100 0064 ; Recompute Eeprom Entry 100 for failure
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0003 1800 0000 ; Recompute Memory Entry 0
+9F18 00C0 0300 1800 0000 ; Recompute Memory Entry 0
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0003 1800 0064 ; Recompute Memory Entry 100 for failure
+9F18 00C0 0300 1800 0064 ; Recompute Memory Entry 100 for failure
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0027 1F00 5343 442E 6665 7041 5470 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute Table for "CS.DefAppTbl"
+9F18 00C0 2700 1F00 5343 442E 6665 7041 5470 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute Table for "CS.DefAppTbl"
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0027 1F00 5343 4E2E 544F 4548 4552 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000; Recompute Table for "CS.NOTHERE"
+9F18 00C0 2700 1F00 5343 4E2E 544F 4548 4552 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000; Recompute Table for "CS.NOTHERE"
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0015 2500 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute App for "CS"
+9F18 00C0 1500 2500 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute App for "CS"
 @CS_CLEAR_CHILD_FLAGS
-189F C000 0015 2500 5343 4E5F 544F 4548 4552 0000 0000 0000 0000 0000 ; Recompute for "CS_NOTHERE"
+9F18 00C0 1500 2500 5343 4E5F 544F 4548 4552 0000 0000 0000 0000 0000 ; Recompute for "CS_NOTHERE"
 @CS_CLEAR_CHILD_FLAGS
 *
 *
@@ -537,9 +537,9 @@
 *<cs_utf_cmds.in> Send Two one shot commands in a row so the second one will fail on a 'task in use'
 *-----------------------------------------------------------------------
 *
-189F C000 0009 0200 FB14 0001 0001 0000 ; OneShot command
-189F C000 0009 0200 FB14 0001 0001 0000 ; OneShot command
-189F C000 0001 0300 ; Cancel OneShot Command
+9F18 00C0 0900 0200 FB14 0001 0001 0000 ; OneShot command
+9F18 00C0 0900 0200 FB14 0001 0001 0000 ; OneShot command
+9F18 00C0 0100 0300 ; Cancel OneShot Command
 *
 *
 *-----------------------------------------------------------------------
@@ -548,13 +548,13 @@
 *
 @ SET_ES_RETURN_CODE 5 0xFFFFFFFF
 
-189F C000 0009 0200 FB14 0001 0001 0000 ; OneShot command
-189F C000 0001 0900 ; Recompute Baseline for cFE Core
-189F C000 0001 0D00 ; Recompute Baseline for OS 
-189F C000 0003 1100 0000 ; Recompute Eeprom Entry 0
-189F C000 0003 1800 0000 ; Recompute Memory Entry 0
-189F C000 0027 1F00 5343 442E 6665 7041 5470 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute Table for "CS.DefAppTbl"
-189F C000 0015 2500 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute App for "CS"
+9F18 00C0 0900 0200 FB14 0001 0001 0000 ; OneShot command
+9F18 00C0 0100 0900 ; Recompute Baseline for cFE Core
+9F18 00C0 0100 0D00 ; Recompute Baseline for OS 
+9F18 00C0 0300 1100 0000 ; Recompute Eeprom Entry 0
+9F18 00C0 0300 1800 0000 ; Recompute Memory Entry 0
+9F18 00C0 2700 1F00 5343 442E 6665 7041 5470 6C62 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute Table for "CS.DefAppTbl"
+9F18 00C0 1500 2500 5343 0000 0000 0000 0000 0000 0000 0000 0000 0000 ; Recompute App for "CS"
 @ SET_ES_RETURN_CODE 5 0x0
 *
 *
@@ -563,8 +563,8 @@
 *-----------------------------------------------------------------------
 *
 @ SET_ES_RETURN_CODE 6 0xFFFFFFFF
-189F C000 0009 0200 FB14 0001 0001 0000 ; OneShot command
-189F C000 0001 0300 ; Cancel OneShot Command
+9F18 00C0 0900 0200 FB14 0001 0001 0000 ; OneShot command
+9F18 00C0 0100 0300 ; Cancel OneShot Command
 @ SET_ES_RETURN_CODE 6 0x0
 @CS_CLEAR_CHILD_FLAGS
 *
@@ -582,7 +582,7 @@
 *
 @ SET_OSARCH_RETURN_CODE 2 0xFFFFFFFF
 
-189F C000 0009 0200 FB14 0001 0001 0000 ; OneShot command
+9F18 00C0 0900 0200 FB14 0001 0001 0000 ; OneShot command
 *
 *
 *-----------------------------------------------------------------------
@@ -598,7 +598,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 @ CS_PRINT_TABLE_DATA
 *
@@ -618,8 +618,8 @@
 *<cs_utf_cmds.in> Then send a background check cycle to get the if's the tables are disabled
 *--------------------------------------------------------------------
 *
-189F C000 0001 0700 ; Disable cFE Core Command
-189F C000 0001 0B00 ; Disable OS Command
+9F18 00C0 0100 0700 ; Disable cFE Core Command
+9F18 00C0 0100 0B00 ; Disable OS Command
 @CS_BACKGROUND_CHECK
 *
 *
@@ -636,7 +636,7 @@
 *
 *<cs_utf_cmds.in> Sending HK request
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 @ CS_PRINT_TABLE_DATA
 *
@@ -649,27 +649,27 @@
 *
 *<cs_utf_cmds.in> Enabling Eeprom
 *
-189F C000 0001 0E00 ; Enable Eeprom
+9F18 00C0 0100 0E00 ; Enable Eeprom
 *
 *<cs_utf_cmds.in> Enabling memory
 *
-189F C000 0001 1500 ; Enable Memory
+9F18 00C0 0100 1500 ; Enable Memory
 *
 *<cs_utf_cmds.in> Enabling Apps
 *
-189F C000 0001 2200 ; Enable Apps
+9F18 00C0 0100 2200 ; Enable Apps
 *
 *<cs_utf_cmds.in> Enabling tables
 *
-189F C000 0001 1C00 ; Enable Tables
+9F18 00C0 0100 1C00 ; Enable Tables
 *
 *<cs_utf_cmds.in> Enabling CFe core
 *
-189F C000 0001 0600 ; Enable  cFE Core Command
+9F18 00C0 0100 0600 ; Enable  cFE Core Command
 *
 *<cs_utf_cmds.in> Enabling OS
 *
-189F C000 0001 0A00 ; Enable  OS Command
+9F18 00C0 0100 0A00 ; Enable  OS Command
 *
 *<cs_utf_cmds.in> Starting background checking
 *
@@ -700,7 +700,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 @ CS_PRINT_TABLE_DATA
 *
@@ -713,19 +713,19 @@
 *
 *<cs_utf_cmds.in> Enabling Eeprom
 *
-189F C000 0001 0E00 ; Enable Eeprom
+9F18 00C0 0100 0E00 ; Enable Eeprom
 *
 *<cs_utf_cmds.in> Enabling memory
 *
-189F C000 0001 1500 ; Enable Memory
+9F18 00C0 0100 1500 ; Enable Memory
 *
 *<cs_utf_cmds.in> Enabling Apps
 *
-189F C000 0001 2200 ; Enable Apps
+9F18 00C0 0100 2200 ; Enable Apps
 *
 *<cs_utf_cmds.in> Enabling tables
 *
-189F C000 0001 1C00 ; Enable Tables
+9F18 00C0 0100 1C00 ; Enable Tables
 *
 *<cs_utf_cmds.in> Set the AppInfo to AddressesAreValid == FALSE to get some more coverage in CS_ComputeApp
 *
@@ -776,7 +776,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 @ CS_PRINT_TABLE_DATA
 *
@@ -804,7 +804,7 @@
 *<cs_utf_cmds.in> Send HK request to process new definition tables
 *-----------------------------------------------------------------------
 *
-18A0 C000 0001 0000 ; HK request
+A018 00C0 0100 0000 ; HK request
 *
 *
 @ CS_PRINT_TABLE_DATA
@@ -839,9 +839,9 @@
 *<cs_utf_cmds.in> Send Err conditions
 *-----------------------------------------------------------------------
 *
-18A1 C000 0001 0000 ; Background request to go through channels
-189F C000 0001 6400 ; Send a bad command code
-189E C000 0001 0000 ; send bad MID
+A118 00C0 0100 0000 ; Background request to go through channels
+9F18 00C0 0100 6400 ; Send a bad command code
+9E18 00C0 0100 0000 ; send bad MID
 *
 
 ; Force CFE_SB_RcvMsg to return CFE_SB_PIPE_RD_ERR 
@@ -854,5 +854,5 @@
 *<cs_utf_cmds.in> SB error\app exit test  [LAST TEST IN CS COMMAND INPUT FILE]
 *-----------------------------------------------------------------------
 @ SET_SB_RETURN_CODE 5 0xca000006
-189F C000 0001 0000    ; NOOP Command
+9F18 00C0 0100 0000    ; NOOP Command
 

@@ -5,6 +5,10 @@ set( MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full" )
 
 # Set include directories
 include_directories(
+	../mission_inc
+	../platform_inc
+	$ENV{CFE_DIR}/fsw/mission_inc
+	$ENV{CFE_DIR}/fsw/platform_inc/cpu1
 	${CMAKE_CURRENT_SOURCE_DIR}
 	${CFE_INC_DIRS}
 	${OSAL_INC_DIRS}
@@ -27,15 +31,15 @@ target_link_libraries(CS-UT -fprofile-arcs gcov ${CMAKE_THREAD_LIBS_INIT})
 add_test(NAME cs-ut
     COMMAND ${CMAKE_COMMAND}
     	-DTEST_PROG=$<TARGET_FILE:CS-UT>
-    	-DEXPECTED_OUTPUT=${UNIT_TEST_INPUT_DIR}/cs_utf_test.out
+    	-DEXPECTED_OUTPUT=${CMAKE_CURRENT_SOURCE_DIR}/cs_utf_test.out
     	-DACTUAL_OUTPUT=${CMAKE_CURRENT_BINARY_DIR}/cs_utf_test.out
     -P ${CMAKE_CURRENT_SOURCE_DIR}/runtest.cmake)
 
 # Copy input files to build directory
-configure_file(${UNIT_TEST_INPUT_DIR}/cs_utf_cmds.in ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cs_utf_cmds.in ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
     
 # Build tables for the tests
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/cf/apps/DefaultTable)
+add_subdirectory(../tables cf/apps/DefaultTable)
 add_subdirectory(cf/apps/CorrFullTable cf/apps/CorrFullTable)
 add_subdirectory(cf/apps/CorrNonFullTable cf/apps/CorrNonFullTable)
 add_subdirectory(cf/apps/CorrQQTable cf/apps/CorrQQTable)
