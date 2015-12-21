@@ -28,12 +28,7 @@ target_link_libraries(CS-UT -fprofile-arcs gcov ${CMAKE_THREAD_LIBS_INIT})
 
 # We need to both run the test and compare the as-run with the expected output
 # with a diff command. 
-add_test(NAME cs-ut
-    COMMAND ${CMAKE_COMMAND}
-    	-DTEST_PROG=$<TARGET_FILE:CS-UT>
-    	-DEXPECTED_OUTPUT=${CMAKE_CURRENT_SOURCE_DIR}/cs_utf_test.out
-    	-DACTUAL_OUTPUT=${CMAKE_CURRENT_BINARY_DIR}/cs_utf_test.out
-    -P ${CMAKE_CURRENT_SOURCE_DIR}/runtest.cmake)
+add_test(NAME cs-ut COMMAND $<TARGET_FILE:CS-UT>)
 
 # Copy input files to build directory
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cs_utf_cmds.in ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
