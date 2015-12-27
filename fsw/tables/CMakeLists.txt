@@ -6,7 +6,8 @@ add_library(cs_eepromtabl STATIC cs_eepromtbl.c)
 add_library(cs_memorytabl STATIC cs_memorytbl.c)
 add_library(cs_tablestabl STATIC cs_tablestbl.c)
 
-set_target_properties(cs_apptabl PROPERTIES PREFIX "" SUFFIX ".tbl")
-set_target_properties(cs_eepromtabl PROPERTIES PREFIX "" SUFFIX ".tbl")
-set_target_properties(cs_memorytabl PROPERTIES PREFIX "" SUFFIX ".tbl")
-set_target_properties(cs_tablestabl PROPERTIES PREFIX "" SUFFIX ".tbl")
+set_target_properties(cs_apptabl PROPERTIES COMPILE_FLAGS ${COMPILE_FLAGS} LINK_FLAGS ${LINK_FLAGS} PREFIX "" SUFFIX ".tbl")
+set_target_properties(cs_eepromtabl PROPERTIES COMPILE_FLAGS ${COMPILE_FLAGS} LINK_FLAGS ${LINK_FLAGS} PREFIX "" SUFFIX ".tbl")
+set_target_properties(cs_memorytabl PROPERTIES COMPILE_FLAGS ${COMPILE_FLAGS} LINK_FLAGS ${LINK_FLAGS} PREFIX "" SUFFIX ".tbl")
+set_target_properties(cs_tablestabl PROPERTIES COMPILE_FLAGS ${COMPILE_FLAGS} LINK_FLAGS ${LINK_FLAGS} PREFIX "" SUFFIX ".tbl")
+
