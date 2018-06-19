@@ -22,13 +22,13 @@ include_directories(${OSAL_INC_DIRS})
 include_directories(${PSP_INC_DIRS})
 	
 # Build application
-add_library(${APP_FILE} SHARED ${APP_SRC})
+add_app(${APP_FILE} SHARED ${APP_SRC})
 
 # Build tables
-add_library(cs_apptbl STATIC ${TABLE_DIR}/cs_apptbl.c)
-add_library(cs_eepromtbl STATIC ${TABLE_DIR}/cs_eepromtbl.c)
-add_library(cs_memorytbl STATIC ${TABLE_DIR}/cs_memorytbl.c)
-add_library(cs_tablestbl STATIC ${TABLE_DIR}/cs_tablestbl.c)
+add_app(cs_apptbl STATIC ${TABLE_DIR}/cs_apptbl.c)
+add_app(cs_eepromtbl STATIC ${TABLE_DIR}/cs_eepromtbl.c)
+add_app(cs_memorytbl STATIC ${TABLE_DIR}/cs_memorytbl.c)
+add_app(cs_tablestbl STATIC ${TABLE_DIR}/cs_tablestbl.c)
 set_target_properties(cs_apptbl PROPERTIES PREFIX "" SUFFIX ".tbl")
 set_target_properties(cs_eepromtbl PROPERTIES PREFIX "" SUFFIX ".tbl")
 set_target_properties(cs_memorytbl PROPERTIES PREFIX "" SUFFIX ".tbl")
